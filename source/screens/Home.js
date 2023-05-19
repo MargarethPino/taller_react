@@ -39,9 +39,19 @@ export default function Home() {
     },[])
     return (
         <>
-        <RN.Text>Objetos</RN.Text>
+        <RN.Text  style={style.centrar} >Objetos</RN.Text>
+       
         {objetos.map(objeto => <Objeto key={objeto.id}{...objeto}/>)}        
         </>
         
     )
 } 
+
+const style = RN.StyleSheet.create ({
+    centrar:{
+        textAlign: 'center'
+    }
+    
+    
+})
+    

@@ -3,6 +3,8 @@ import * as RN from 'react-native';
 import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import {AntDesign} from '@expo/vector-icons';
 import { baseDatos } from '../config/firebase';
+import { View, Text, Image} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function Objeto({ id, imagen, nombre, descripcion, precio, vendido }) {
@@ -21,7 +23,7 @@ export default function Objeto({ id, imagen, nombre, descripcion, precio, vendid
       <View style={styles.header}>
         <Text style={styles.imagen}>{imagen}</Text>
         <TouchableOpacity onPress={eliminar} style={styles.deleteButton}>
-          <AntDesign name="delete" size={25} color="white" />
+          <AntDesign name="delete" size={25} color="black" />
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
@@ -49,15 +51,19 @@ const styles = RN.StyleSheet.create({
   nombre: {
     fontSize: 34,
     fontWeight: '700',
+    fontFamily: 'Courier New',
+     alignItems: 'center',
   },
   descripcion: {
     fontSize: 20,
     fontWeight: '700',
+    fontFamily: 'Courier New',
+     alignItems: 'center',
   },
   imagen:{
     fontSize:100,
     borderWidth:1,
-    borderColor: '#ddd',
+    borderColor: 'black',
     borderRadius: 10,
     padding: 10,
     marginVertical: 6,
@@ -69,6 +75,7 @@ const styles = RN.StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 6,
+    fontFamily: 'Courier New',
   },
   conEliminar:{
     flexDirection: 'row',
@@ -77,6 +84,10 @@ const styles = RN.StyleSheet.create({
   button:{
     borderRadius: 10,
     color: '#f0f',
-    backgroundColor: '#ddd'
+    borderWidth:0.5,
+    borderRadius: 8,  
+    marginVertical: 2,
+    fontFamily: 'Courier New',
+    fontWeight:'500'
   },
 });

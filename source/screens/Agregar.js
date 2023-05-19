@@ -10,7 +10,7 @@ export default function Agregar() {
    
 
     const [newObjeto, setNewObjeto] = React.useState({
-        imagen: '\u1F6B2',
+        imagen: '\u{1F6B2}',
         nombre: '',
         descripcion: '',
         precio: 0,
@@ -25,11 +25,12 @@ export default function Agregar() {
     return (
         <RN.View style={styles.container}>
             <RN.Text style={styles.title}>Tu bicicleta agregada </RN.Text>
-            <RN.Text style={styles.imagen}>\u1F6B2</RN.Text>
+            <RN.Text style={styles.imagen}>{newObjeto.imagen}</RN.Text>
+
             <RN.TextInput  style={styles.inputContainer}  placeholder='Nombre' onChangeText={(text) => setNewObjeto({...newObjeto, nombre:text})} />
             <RN.TextInput style={styles.inputContainer} placeholder='Descripción' onChangeText={(text) => setNewObjeto({...newObjeto, descripcion:text})} />
             <RN.TextInput style={styles.inputContainer} placeholder='$ Precio' keyboardType='number-pad' onChangeText={(text) => setNewObjeto({...newObjeto, precio:text})} />
-            <RN.Button title='Guardar' onPress={enviar}/>
+            <RN.Button title='Guardar' onPress={enviar} color="Window"/>
         </RN.View>
         
         
